@@ -64,9 +64,7 @@ export class AppComponent {
   }
 
   updateBox(id, x, y) {
-    const box = this.boxes[id];
-    box.x = x;
-    box.y = y;
+    this.boxes[id] = { id, x, y }; // new references instead of mutation
   }
 
 }

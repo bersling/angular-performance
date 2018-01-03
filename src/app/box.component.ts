@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: '[box]',
@@ -12,7 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
         stroke="black"
         [attr.fill]="selected ? 'red' : 'transparent'"
         strokeWidth="1"></svg:rect>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BoxComponent {
   @Input() box;
